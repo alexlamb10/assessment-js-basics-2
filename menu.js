@@ -31,7 +31,14 @@
 */
 
 //CODE HERE
-
+let pizza = {
+    name: 'Pepperoni',
+    price: 5.99,
+    category: 'entree',
+    popularity: 5,
+    rating: 5,
+    tags: ['Request kids', 'gluten free', 'make it a meal']
+}
 
 
 //////////////////PROBLEM 2////////////////////
@@ -43,7 +50,7 @@
 */
 
 //CODE HERE
-
+console.log(pizza.popularity)
 
 /*
     Second, log the second tag in your pizza's
@@ -53,6 +60,7 @@
 */
 
 //CODE HERE
+console.log(pizza.tags[1])
 
 
 /*
@@ -63,6 +71,8 @@
 */
 
 //CODE HERE
+let {price: priceOfPizza} = pizza
+console.log(priceOfPizza)
 
 
 /*
@@ -73,7 +83,8 @@
 */
 
 //CODE HERE
-
+let {category: mealType} = pizza
+console.log(mealType)
 
 //////////////////PROBLEM 3////////////////////
 /* 
@@ -88,9 +99,48 @@
 */
 
 //CODE HERE
+let foodArr = [{
+    name: 'Pepperoni',
+    price: 5.99,
+    category: 'entree',
+    popularity: 5,
+    rating: 5,
+    tags: ['Request kids', 'gluten free', 'make it a meal']
+    },
+    {
+        name: 'Cheese',
+        price: 4.99,
+        category: 'appetizer',
+        popularity: 2,
+        rating: 3,
+        tags: ['Kids sizes', 'dairy free cheese', 'glueten free']
+    },
+    {
+        name: 'Curry',
+        price: 8.99,
+        category: 'entree',
+        popularity: 5,
+        rating: 2,
+        tags: ['small/large', 'mild', 'spicy']
+    },
+    {
+        name: 'Pad Thai',
+        price: 11.99,
+        category: 'meal',
+        popularity: 6,
+        rating: 7,
+        tags: ['large only', 'make it your own', 'extreme heat']
+    },
+    {
+        name: 'Sushi',
+        price: 7.50,
+        category: 'appetizer',
+        popularity: 7,
+        rating: 9,
+        tags: ['pay by roll', 'make your own', 'choose your sauce']
+    }]
 
-
-
+// console.log(foodArr)
 //////////////////PROBLEM 4////////////////////
 /* 
     Let's filter the food objects according
@@ -105,7 +155,9 @@
 
 //CODE HERE
 
-// const filteredFood = foodArr.filter(/* CALLBACK HERE */)
+const filteredFood = foodArr.filter(food => food.name === 'Pad Thai')
+console.log(filteredFood)
+
 
 
 
@@ -149,7 +201,16 @@
 */
 
 //CODE HERE
-
+function filterByProperty(property, number, type){
+    const filterArr = foodArr.filter(food => {food.propery = property
+        if (type === 'above'){
+            return food.property > number
+    } if( type ==='below'){
+             return food.property < number
+         }
+    })
+    return filterArr
+}
 
 /*
     Invoke the `filterByProperty` function passing
@@ -159,3 +220,4 @@
 */
 
 //CODE HERE
+console.log(filterByProperty('rating', 4, 'above'))

@@ -35,7 +35,8 @@ const cart = [
 
 //CODE HERE
 
-// const summedPrice = cart.reduce(/* CALLBACK HERE */)
+const summedPrice = cart.reduce((total, item) => total + item.price, 0)
+console.log(summedPrice)
 
 
 //////////////////PROBLEM 2////////////////////
@@ -54,7 +55,12 @@ const cart = [
 */
 
 //CODE HERE
+function calcFinalPrice(cartTotal, couponValue, tax){
+    let taxToAdd = cartTotal * tax
+    return cartTotal + taxToAdd - couponValue
+}
 
+console.log(calcFinalPrice(26.97, 3, .06))
 
 
 //////////////////PROBLEM 3////////////////////
@@ -79,6 +85,10 @@ const cart = [
 
 /*
     TEXT ANSWER HERE
+    First and Last name : need to know who the person is (string)
+    Number of items: need to know how many items were purchased (number)
+    payment type: how they paid. Cash, debit credit (string)
+    loyalty rewards member: some stores have special discounts for this T/F
 
 */
 
@@ -88,3 +98,9 @@ const cart = [
 */
 
 //CODE HERE
+let customer = {
+    name: 'Alex Lamb',
+    numOfItems: 6,
+    paymentType: 'Credit',
+    loyaltyRewardsMember: false
+}
