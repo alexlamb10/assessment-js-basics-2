@@ -22,7 +22,9 @@
 */
 
 //CODE HERE
+const greetUser = (username) => console.log(`Welcome back, ${username}`)
 
+greetUser('Andrew')
 
 
 
@@ -50,8 +52,16 @@
 const deliveryAreaZipCodes = [85205, 85204, 85203, 85213, 85206]
 
 //CODE HERE
-
-
+function canWeDeliver(zipCode){
+    for(let i = 0; i < deliveryAreaZipCodes.length; i++){
+        if(zipCode === deliveryAreaZipCodes[i]){
+            return console.log(`You're in our delivery zone!`)
+        }
+    }
+    return console.log(`Sorry, we can't delver to that address`)
+}
+// canWeDeliver(84606) 
+// canWeDeliver(85205)
 
 /* 
     Problem 2 Continued
@@ -71,6 +81,15 @@ const deliveryAreaZipCodes = [85205, 85204, 85203, 85213, 85206]
 */
 
 // CODE HERE
+function canWeDeliverTwo(zipCode){
+    if(deliveryAreaZipCodes.includes(zipCode)){
+        return console.log(`You're in our delivery zone!`)
+    } else{
+        return console.log(`Sorry, we can't delver to that address`)
+    }
+}
+// canWeDeliver(84606) 
+// canWeDeliver(85205)
 
 
 //////////////////PROBLEM 3////////////////////
@@ -107,7 +126,12 @@ const deals = [
 */
 
 //CODE HERE
+const newDeal = deals.map(deal => {if(deal.title === '15% Off!'){
+    deal.title = '10% Off!'
+}
+})
 
+console.log(deals)
 
 
 /*
@@ -124,3 +148,11 @@ const deals = [
 */
 
 //CODE HERE
+const newDeal2 = deals.map(deal => {
+    let newDeal = deal['desc'].trim()
+    if(newDeal === "This deal lasts until the end of March!"){
+        deal['desc'] = "This deal lasts until the end of April!"
+    }
+})
+
+console.log(deals)
