@@ -126,13 +126,8 @@ const deals = [
 */
 
 //CODE HERE
-const newDeal = deals.map(deal => {if(deal.title === '15% Off!'){
-    deal.title = '10% Off!'
-}
-})
-
+deals[0].title = deals[0].title.replace('15', '10')
 console.log(deals)
-
 
 /*
     The restaurant is going to continue its
@@ -148,11 +143,13 @@ console.log(deals)
 */
 
 //CODE HERE
-const newDeal2 = deals.map(deal => {
-    let newDeal = deal['desc'].trim()
-    if(newDeal === "This deal lasts until the end of March!"){
-        deal['desc'] = "This deal lasts until the end of April!"
-    }
-})
+// const newDeal2 = deals.map(deal => {
+//     let newDeal = deal['desc'].trim()
+//     if(newDeal === "This deal lasts until the end of March!"){
+//         deal['desc'] = "This deal lasts until the end of April!"
+//     }
+// })
+
+deals[1].desc = deals[1].desc.trim().replace('March', 'April') 
 
 console.log(deals)
